@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "gmp.h"
 
 /* Write a computer program to compute the factorial of every integer
 between 1 and 100, and compare the results that are given by a simple form
