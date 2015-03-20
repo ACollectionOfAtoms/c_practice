@@ -1,37 +1,72 @@
 #include <stdio.h>
-#include "gmp.h"
+#include <math.h>
 
-/* Write a computer program to compute the factorial of every integer
-between 1 and 100, and compare the results that are given by a simple form
-of Sterling's approximation.
+/* Create an array that returns ln(N!)
+ * another that returns Nln(N) - N
+ * and then a funtion that returns their difference
+ * use the main function to print out gnuplot format
+ */
 
-ln(N!) = Nln(N)-N
-
-Plot the difference and estimate the point at which Sterling's approximation will be within 0.1% of
-the exact result.
-*/
-int fact(int x)
+double * exact()
 {
-	int n, fact = x;
-	n = x - 1;
-	if (x == 1 || x == 0){
-		return 1;
-	}else{
-		while (n >= 1)
-		{
-			fact *= n;
-			n -= 1;
-		}
+	static double a[99];
+	double carry;
+	int i;
+
+	a[0] = 0.0;
+	a[1] = log(2);
+	carry = a[1];
+
+	for (i = 2; i <= 100; i++)
+	{
+		a[i] = carry + log(i + 1);
+		carry = a[i];
 	}
-	return fact;
+	return a;
 }
+
+double * approx()
+{
+	static double b[99];
+	double carry;
+	int i;
+
+	for (i = 0; i <= 100; i++)
+	{
+		b[i] = (i+1)*log((i+1)) - (i+1);
+	}
+	return b;
+}
+
+double * diff(double* a, double* b)
+{
+	static double diff[99];
+	int i;
+
+	for (i = 0; i <= 100; i ++)
+	{
+		diff[i] = fabs(a[i] - b[i]);
+	}
+	return diff;
+}
+
+
 
 int main()
 {
+	double *err, *ex, *apx;
 	int i;
-	for (i = 1; i <101; i ++)
+	ex = exact();
+	apx = approx();
+	err = diff(ex,apx);
+	for (i = 0; i < 100; i ++)
 	{
-		printf("%i\n",fact(i));
+		printf("%d ", i +1);
+		printf("%f ", ex[i]);
+		printf("%f ", apx[i]);
+		printf("%f\n", err[i]);
 	}
 	return 0;
 }
+	
+
