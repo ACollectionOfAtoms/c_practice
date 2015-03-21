@@ -50,21 +50,36 @@ double * diff(double* a, double* b)
 	return diff;
 }
 
+double * diffpercent(double* a, double* b)
+{
+	static double diff[99];
+	int i;
+
+	for (i = 0; i <= 100; i ++)
+	{
+		diff[i] = ((fabs(a[i] - b[i]))/a[i])*100;
+	}
+	return diff;
+}
+
+
 
 
 int main()
 {
-	double *err, *ex, *apx;
+	double *err, *perr, *ex, *apx;
 	int i;
 	ex = exact();
 	apx = approx();
 	err = diff(ex,apx);
+	perr = diffpercent(ex,apx);
 	for (i = 0; i < 100; i ++)
 	{
 		printf("%d ", i +1);
 		printf("%f ", ex[i]);
 		printf("%f ", apx[i]);
-		printf("%f\n", err[i]);
+		printf("%f ", err[i]);
+		printf("%f\n",perr[i]);
 	}
 	return 0;
 }

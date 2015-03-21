@@ -1,0 +1,8 @@
+set output 'ex0.png'
+set xrange [1:100]
+set yrange [1:4]
+set title "Difference Between Stirlings Approximate and Exact Values of Factorials from 1 to 100"
+set key below
+plot 'ex0.dat' using 1:3 title "Absolute Value of Error" with points, \
+	 'ex0.dat' using 1:4 t "Percent Error" with points
+
