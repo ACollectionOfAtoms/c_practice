@@ -5,7 +5,7 @@ void dgetrf_();void dgetrs_();
 void dgesv_();
 int main()
 {
-  int i,j,n=3,one=1,info;
+  int i,j,n=10,one=1,info;
   double *a=malloc(n*n*sizeof(double));
   double *b=malloc(n*sizeof(double));
   int *ipiv=malloc(n*sizeof(int));
