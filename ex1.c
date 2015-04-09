@@ -6,7 +6,7 @@ void dgesv_();
 int main()
 {
   int i,j,n=10,one=1,info;
-  double *a=malloc(n*n*sizeof(double));
+  double *a=malloc(n*sizeof(double));
   double *b=malloc(n*sizeof(double));
   int *ipiv=malloc(n*sizeof(int));
   char trans[1]={'N'};
@@ -16,11 +16,10 @@ int main()
  /* dgetrf_(&n,&n,a,&n,ipiv,&info);
     dgetrs_(trans,&n,&one,a,
             &n,ipiv,b,&n,&info); */
- dgesv_(&n,&one,a,&n,ipiv,b,&n,&info);
+  dgesv_(&n,&one,a,&n,ipiv,b,&n,&info);
   for(i=0;i<n;++i)
   {
   printf("%8.5g \n",b[i]);
   }
 return(0);
 }
-
