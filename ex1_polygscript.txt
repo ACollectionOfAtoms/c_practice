@@ -1,0 +1,9 @@
+set terminal png
+set output 'ex1.png'
+set xrange [0.2:5]
+set xlabel "r (Angstroms)"
+set ylabel "Energy (hartrees)"
+set title "Potential Energy Surface Of H2 Molecule"
+set key below
+f(x) = -0.976798 - 1.10087(x) - 1.15352(x**2) - 1.17101(x**3) - 1.7041(x**4) - 1.16041(x**5) - 1.14576(x**6)
+plot f(x) with lines x1y1
