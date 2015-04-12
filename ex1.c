@@ -23,7 +23,7 @@ void polyexp()
   printf("\n\n");
 
   dgesv_(&n,&one,a,&n,ipiv,b,&n,&info);
-  printf("Coefficients for sixth order polynomial in terms of exp(-r)");
+  printf("Coefficients for sixth order polynomial in terms of exp(-r)\n");
   for(i=0;i<n;++i)
   {
   printf("%16.6g \n",b[i]);
@@ -48,7 +48,7 @@ void poly()
   printf("\n\n");
 
   dgesv_(&n,&one,a,&n,ipiv,b,&n,&info);
-  printf("Coefficients for sixth order polynomial in terms of r");
+  printf("Coefficients for sixth order polynomial in terms of r\n");
   for(i=0;i<n;++i)
   {
   printf("%16.6g \n",b[i]);
