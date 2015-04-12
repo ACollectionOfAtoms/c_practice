@@ -1,5 +1,5 @@
 set terminal png
-set output 'ex1.png'
+set output 'exp_ex1.png'
 set xrange [0.2:5]
 set xlabel "r (Angstroms)"
 set ylabel "Energy (hartrees)"
