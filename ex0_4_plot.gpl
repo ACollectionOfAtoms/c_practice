@@ -1,0 +1,12 @@
+set terminal png
+set output 'exp_ex1.png'
+set xrange [0:100]
+set xlabel "Time (Seconds)"
+set ylabel "Concentration (M)"
+set title "First Order Reaction - Concentration of A"
+set key below
+plot 'ex0.02.dat' using 1 title "h = 0.02" with points axes x1y1, \
+	 'ex0.5.dat' using 1 t "h = 0.5" with points axes x1y1, \
+	 'ex1.0.dat' using 1 t "h = 1.0" with points axes xyy1, \
+	 'ex1.5.dat' using 1 t "h = 1.5" with points axes xyy1, \
+	 'ex2.0.dat' using 1 t "h = 2.0" with points axes xyy1, \
