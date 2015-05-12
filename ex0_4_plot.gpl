@@ -5,8 +5,8 @@ set xlabel "Time (Seconds)"
 set ylabel "Concentration (M)"
 set title "First Order Reaction - Concentration of A"
 set key below
-plot 'h_0.02.dat' using 1 title "h = 0.02" with points axes x1y1, \
-	 'h_0.5.dat' using 1 t "h = 0.5" with points axes x1y1, \
-	 'h_1.0.dat' using 1 t "h = 1.0" with points axes x1y1, \
-	 'h_1.5.dat' using 1 t "h = 1.5" with points axes x1y1, \
-	 'h_2.0.dat' using 1 t "h = 2.0" with points axes x1y1, \
+plot 'h_0.02.dat' using 1:2 title "h = 0.02" with points axes x1y1, \
+	 'h_0.5.dat' using 1:2 t "h = 0.5" with points axes x1y1, \
+	 'h_1.0.dat' using 1:2 t "h = 1.0" with points axes x1y1, \
+	 'h_1.5.dat' using 1:2 t "h = 1.5" with points axes x1y1, \
+	 'h_2.0.dat' using 1:2 t "h = 2.0" with points axes x1y1, \
