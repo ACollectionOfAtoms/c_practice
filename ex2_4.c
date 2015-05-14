@@ -5,22 +5,6 @@
 /* Compute concentrations for A, B, and C species in a sequential first order chemical reaction with back reactions
  * */
 
-/*double *create_anfirstorder(double initialA, double kf1, double kb1, double kf2, double kb2, int t)
-{
-	double *species = malloc(3 * sizeof *species);
-	double A, B, C;
-	A = initialA*(exp(-k1*t));
-	B = ((k1*initialA)/(k2 -k1))*(exp(-k1*t) - exp(-k2*t));
-	C = initialA - A - B;
-	species[0] = A;
-	species[1] = B;
-	species[2] = C;
-
-	return species;
-}
-*/
-
-
 double **create_firstorder(double h, double kf1, double kb1, double kf2, double kb2, int t)
 {
 	double Acarry, Bcarry, Ccarry;
@@ -89,11 +73,6 @@ int main(int argc, char *argv[])
 		printf("%f \n", res[2][i]);
 		time += h;
 	}
-	//printf("\n");
-	//printf("Analytically Calculated Concentrations:\n");
-	//printf("A: %f B: %f C: %f\n", ana[0], ana[1], ana[2]);
-
-	free(ana);
 	free(res);
 
 	return 0;
