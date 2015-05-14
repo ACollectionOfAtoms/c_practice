@@ -1,5 +1,5 @@
 set terminal png
-set output 'exp_ex1.png'
+set output 'ex0_4_plot.png'
 set xrange [0:100]
 set xlabel "Time (Seconds)"
 set ylabel "Concentration (M)"
