@@ -1,0 +1,16 @@
+set terminal png
+set output 'ex2_4_plot.png'
+set xrange [0:100]
+set xlabel "Time (Seconds)"
+set ylabel "Concentration (M)"
+set title "First Order Reaction - Concentration of A, B, C - Reversible"
+set key below
+plot 'ex2_0.0.dat' using 1:2 t "A kb1 = 0.0, kb2 = 0.0" with lines axes x1y1, \
+	 'ex2_0.0.dat' using 1:3 t "B kb1 = 0.0, kb2 = 0.0" with lines axes x1y1, \
+	 'ex2_0.0.dat' using 1:4 t "C kb1 = 0.0, kb2 = 0.0" with lines axes x1y1, \
+	 'ex2_order.dat' using 1:2 t "A kb1 = 0.001, kb2 = 0.02" with lines axes x1y1, \
+	 'ex2_order.dat' using 1:3 t "B kb1 = 0.001, kb2 = 0.02" with lines axes x1y1, \
+	 'ex2_order.dat' using 1:4 t "C kb1 = 0.001, kb2 = 0.02" with lines axes x1y1, \
+	 'ex2_big.dat' using 1:2 t "A kb1 = 0.009, kb2 = 0.1" with lines axes x1y1, \
+	 'ex2_big.dat' using 1:3 t "B kb1 = 0.009, kb2 = 0.1" with lines axes x1y1, \
+	 'ex2_big.dat' using 1:4 t "C kb1 = 0.009, kb2 = 0.1" with lines axes x1y1
